@@ -2,6 +2,8 @@ directorio = "C:/Users/xavie/OneDrive/Documentos/GitHub/Software_Actuarial_III/s
 completos <- function(directorio,id){
   
   coel <- c()
+  eor <- vector("numeric")
+  rina <- vector("numeric")
   for(i in id){
     
   if (i < 10){
@@ -23,8 +25,15 @@ completos <- function(directorio,id){
   dort <- dim.data.frame(toro)
   coel <- dort[1]
   
-  print(coel)
+  #print(coel)
+  #print(i)
+  rina <- c(rina,coel)
+  eor <- c(eor,i)
   }
+  #print(rina)
+  #print(eor)
+  spoer <- data.frame(id = eor,nobs = rina)
+  print(spoer)
 }
 
 completos(directorio,id = 1:332)

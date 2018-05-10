@@ -823,9 +823,89 @@ str(s)
 #pnorm: evalua la funcion de distribucion en un punto de una distribucuion normal
 #rpois: genera variables aleatorias Poisson con una tasa dada
 
+#d densidad
+#r variable aleatoria
+#p distribucion acumulativa
+#q para el cuantil de una funcion
 
+x <- rnorm(10)
+x
+y <- rnorm(10,50,5)
+y
+summary(x)
+summary(y)
 
+#Clase del 25/4/2018...............................................
 
+x <- vector("numeric")
+for (i in 1:5){
+  x <- c(x,i)
+}
+x
 
+#Clase del 7/5/2018................................................................
+
+getwd()
+tail(list.files(),2)
+setwd("./tgh")
+
+file.exists("specdata") #ve si existe un directorio
+dir.create("specdata") #crea un directorio
+
+if (!file.exists("data")){
+  dir.create("data")
+}
+
+download.file() #descarga un archivo desde internet
+
+# urlArchivo <- "direccion"
+# archivos <- download.file(urlArchivo)
+# leer <- read.table(archivos)
+
+read.table() #Lee y carga los archivos en R
+
+#Parametros importantes
+
+#quote - le dice a R si existe algun comentario (quote ="" significa que no hay comentarios)
+#na.strings - establece el caracter que corresponde a valores faltantes
+#nrows - cantidad de filas
+#skip - una cantidad de filas a evitar antes de iniciar la lectura
+
+install.packages("rJava")
+install.packages("xlsx")
+install.packages("XML")
+
+#Clase del 10/5/2018................................................................
+
+install.packages("jsonlite")
+library(jsonlite)
+jsonData <- fromJSON("https://api.github.com/users/AgustinMO/repos")
+names(jsonData)
+jsonData$name
+
+install.packages("data.table")
+library(data.table)
+tables()
+
+set.seed(13435)
+x <- data.frame("var1"=sample(1:5),"var2"=sample(6:10),"var3"=sample(11:15))
+x <- x[sample(1:5),]; x$var2[c(1,3)]=NA
+x
+
+x[,1]
+x[,"var1"]
+x[1:2,"var2"]
+
+x[(x$var1 <= 3 & x$var3 > 11),]
+x[(x$var1 <= 3 | x$var3 > 15),]
+
+x[which(x$var2 > 8),]
+
+sort(x$var1)
+sort(x$var1,decreasing = T)
+sort(x$var2,na.last = T)
+
+x[order(x$var1),]
+order(x$var1)
 
 

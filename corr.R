@@ -1,7 +1,8 @@
 directorio = "C:/Users/xavie/OneDrive/Documentos/GitHub/Software_Actuarial_III/specdata"
 corr <- function(directorio,horizonte = 0){
-  id = 1:332
-
+  id = 1:250
+  
+  simuy <- vector("numeric")
   for (i in id){
   
   if (i < 10){
@@ -22,9 +23,18 @@ corr <- function(directorio,horizonte = 0){
   torqo
   soler <- cor(torqo$sulfate,torqo$nitrate)
   
-  print(soler)
-  }
+  #print(soler)
   
+  if (soler>horizonte){
+    #msg <- "Es este"
+    #print(msg)
+    simuy <- c(simuy,soler)
+  }else{
+    
+  }
+ 
+  }
+  print(simuy)
 }
 
 corr(directorio,horizonte = 0)

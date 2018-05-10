@@ -1,6 +1,7 @@
 directorio = "C:/Users/xavie/OneDrive/Documentos/GitHub/Software_Actuarial_III/specdata"
 mediacontaminante <- function(directorio,contaminante,id){
   
+  ronda <- vector("numeric")
   for (i in id){
   
   if (i < 10){
@@ -27,10 +28,13 @@ mediacontaminante <- function(directorio,contaminante,id){
     ipl <- colMeans(sl,na.rm = TRUE)
     ipl
   }
-    print(ipl)
-  
+    #print(ipl)
+    ronda <- c(ronda,ipl)
+    print(ronda)
+    
   }
-  
+ 
 }
 
-mediacontaminante(directorio,contaminante = "sulfate", id = 1:332)
+mediacontaminante(directorio,contaminante = "sulfate", id = 1:5)
+

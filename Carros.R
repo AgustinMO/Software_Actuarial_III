@@ -36,9 +36,3 @@ structure(list(mpg = c(21, 21, 22.8, 21.4, 18.7, 18.1, 14.3,
 "Camaro Z28", "Pontiac Firebird", "Fiat X1-9", "Porsche 914-2", 
 "Lotus Europa", "Ford Pantera L", "Ferrari Dino", "Maserati Bora", 
 "Volvo 142E"), class = "data.frame")
-
-nuevocon <- dget(file="~/GitHub/Software_Actuarial_III/Carros.R")
-CarrosAgustín <- data.frame(nuevocon)
-CarrosAgustín
-
-
